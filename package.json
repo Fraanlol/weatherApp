@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "startdev": "webpack serve --open --config webpack.config.dev.js",
-    "startprod": "webpack --config webpack.config.prod.js",
+    "startprod": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",

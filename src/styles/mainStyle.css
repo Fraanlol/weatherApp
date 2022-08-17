@@ -1,0 +1,65 @@
+html{
+    font-size: 10px;
+}
+
+nav{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(15, 33, 17, 0.52);
+    grid-gap: 1.5rem;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+}
+
+.logo--container{
+    font-size: 2rem;
+}
+
+.searchbar--container{
+    display:flex;
+    flex-flow: row;
+    justify-self: start;
+}
+
+#searchbar{
+    outline:none;
+    border: none;
+    width: 30rem;
+    height: 2.5rem;
+    padding: 1.5rem;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+#searchbar::-webkit-search-cancel-button{
+    appearance: none;
+}
+
+.searchbar--container_button{
+    border: 1px solid rgb(0,0,0,0.2);
+    background-color: #f6753f;
+    color:white;
+    border-radius: 0 5px 5px 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.searchbar--container_button:hover{
+    background-color: rgba(255, 255, 255, 0.89);
+    color:black;
+}
+
+.trigger--temp__button{
+    background: rgba(255, 255, 255, 0.98);
+    padding: 5px;
+    border:none;
+    width: 20rem;
+    height: 4rem;
+    border-radius: 5px;
+}
+
+.trigger--temp__button:hover{
+    background: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+}
