@@ -4,19 +4,20 @@ export const buildSkeleton = (response) =>{
 
     const weatherSimpleTile = (data, isMain) =>{
         /*
-         Build's "Current Weather" Left tile.
+         Build's "Current Weather" Tiles.
          isMain Bool is to defer between live weather and hour-time weather.
         */
 
         let container = utils.newElement('div', 'container--weather__sim');
         let iconContainer = utils.newElement('div', 'container--weather__icon');
         let currentDegree = utils.newElement('p', 'weather--current_degree', data.temp_c);
-
         container.append(iconContainer,currentDegree);
         if(isMain){
+            let maxMinContainer = utils.newElement('div', 'weather--current_range');
             let maxDegree = utils.newElement('p', 'weather--current_max', data.maxtemp_c);
             let minDegree = utils.newElement('p', 'weather--current_min', data.mintemp_c);
-            container.append(maxDegree, minDegree);
+            maxMinContainer.append(maxDegree,minDegree);
+            container.append(maxMinContainer);
         }else{
             let hourTime = utils.newElement('p', 'weather--current_hourtime', data.time.split(' ')[1]);
             container.insertBefore(iconContainer, hourTime);
