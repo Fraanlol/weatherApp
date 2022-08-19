@@ -1,6 +1,6 @@
 import * as utils from "../utils"
 
-export const buildSkeleton = (response) =>{
+const buildSkeleton = () =>{
 
     const weatherSimpleTile = (data, isMain) =>{
         /*
@@ -28,7 +28,7 @@ export const buildSkeleton = (response) =>{
 
     const weatherExtendedInfo = (data) =>{
         /*
-         Build's "Current Weather" Right tile.
+         Build's "Current Weather" Footer info.
         */
         let container = utils.newElement('div', 'container--weather__ext');
         let title = utils.newElement('p', 'weather--ext_title', data.ext.title);
@@ -38,4 +38,8 @@ export const buildSkeleton = (response) =>{
 
         return container;
     }
+
+    return {weatherSimpleTile, weatherExtendedInfo}
 }
+
+export const builder = buildSkeleton();
