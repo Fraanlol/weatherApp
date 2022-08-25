@@ -29,7 +29,7 @@ const buildSkeleton = () =>{
             let currentDegree = utils.newElement('p', 'weather--current_degree', data.temp_c);
             iconContainer.append(icon,currentDegree);
             container.append(iconContainer);
-            let hourTime = utils.newElement('p', 'weather--current_hourtime', data.time.split(' ')[1]);
+            let hourTime = utils.newElement('p', 'weather--current_hourtime', data.time);
             container.insertBefore(hourTime, iconContainer);
         }
 

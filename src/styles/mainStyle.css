@@ -8,7 +8,7 @@ nav{
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     justify-items: center;
-    background-color: rgba(15, 33, 17, 0.52);
+    background-color: #29252C;
     grid-gap: 1.5rem;
     padding: .5rem 0;
     font-size: 1.5rem;
@@ -17,6 +17,8 @@ nav{
 
 .logo--container{
     font-size: 2rem;
+    color:white;
+    font-weight: bolder;
 }
 
 .searchbar--container{
@@ -40,7 +42,7 @@ nav{
 
 .searchbar--container_button{
     border: 1px solid rgb(0,0,0,0.2);
-    background-color: #f6753f;
+    background-color: #F33535;
     color:white;
     border-radius: 0 5px 5px 0;
     padding: 5px;
@@ -169,7 +171,7 @@ nav{
     display:flex;
     flex-flow:row;
     flex-wrap: wrap;
-    background-color: rgba(15, 33, 17, 0.52);
+    background-color: #29252C;
     padding: 0 200px;
 }
 
@@ -191,4 +193,16 @@ nav{
     font-size: 20px;
     color: white;
     margin-top: 0;
+}
+
+.current--forecast__container::-webkit-scrollbar-track{
+    background: #ffffff;
+}
+
+.current--forecast__container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.current--forecast__container::-webkit-scrollbar-thumb {
+    background-color:#F33535;
 }

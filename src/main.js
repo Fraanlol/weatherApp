@@ -18,7 +18,13 @@ const buildCurr = () =>{
         let currentForecast = document.querySelector('.current--forecast__container');
         p.hour.forEach((k) => {
             if(k.time.split(' ')[1].split(':')[0] >= p.current.localtime.split(' ')[1].split(':')[0]){
-                currentForecast.append(builder.weatherSimpleTile(k, 0))
+                if(k.time.split(' ')[1].split(':')[0] === p.current.localtime.split(' ')[1].split(':')[0]){
+                    k.time = 'Current';
+                    currentForecast.append(builder.weatherSimpleTile(k, 0))
+                }else {
+                    k.time = k.time.split(' ')[1];
+                    currentForecast.append(builder.weatherSimpleTile(k, 0))
+                }
             }
         })
 
