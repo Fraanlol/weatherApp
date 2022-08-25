@@ -2,22 +2,29 @@ import * as utils from "../utils"
 
 const buildSkeleton = () =>{
 
-    const weatherSimpleTile = (data, isMain) =>{
+    const weatherSimpleTile = (data, isMain, isCelsius) =>{
         /*
          Build's "Current Weather" Tiles.
          isMain Bool is to defer between live weather and hour-time weather.
         */
 
+        let info = data.celsius;
+
+        if(!(isCelsius)){
+            info = data.faren;
+        }
+
+
         let container = utils.newElement('div', 'weatherContainer--Current__short');
         let iconContainer = utils.newElement('div', 'container--weather__icon');
             let icon = utils.createImage(data.condition.icon);
         if(isMain){
-            let currentDegree = utils.newElement('h1', 'weather--current_degree', data.temp_c);
+            let currentDegree = utils.newElement('h1', 'weather--current_degree', info.temp);
             iconContainer.append(icon,currentDegree);
             container.append(iconContainer);
             let maxMinContainer = utils.newElement('div', 'weather--current_range');
-                let maxDegree = utils.newElement('p', 'weather--current_max',`Max: ${data.day.maxtemp_c}`);
-                let minDegree = utils.newElement('p', 'weather--current_min', `Min: ${data.day.mintemp_c}`);
+                let maxDegree = utils.newElement('p', 'weather--current_max',`Max: ${Math.round(info.maxtemp)}`);
+                let minDegree = utils.newElement('p', 'weather--current_min', `Min: ${Math.round(info.mintemp)}`);
                 let status = utils.newElement('p', 'weather--status', data.condition.text);
             let currentCityContainer = utils.newElement('div', 'container--weather__city');
                 let city = utils.newElement('h2', 'weather--city', data.name);
@@ -26,7 +33,7 @@ const buildSkeleton = () =>{
             container.append(maxMinContainer);
             container.insertBefore(currentCityContainer, iconContainer);
         }else{
-            let currentDegree = utils.newElement('p', 'weather--current_degree', data.temp_c);
+            let currentDegree = utils.newElement('p', 'weather--current_degree', Math.round(info.temp));
             iconContainer.append(icon,currentDegree);
             container.append(iconContainer);
             let hourTime = utils.newElement('p', 'weather--current_hourtime', data.time);
