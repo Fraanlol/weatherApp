@@ -14,15 +14,18 @@
     </div>
     <div class="searchbar--container">
         <input type="search" id="searchbar" placeholder="Search Location...">
-        <button type="button" class="searchbar--container_button">Search</button>
+        <button type="submit" id="submitSearch" class="searchbar--container_button">Search</button>
     </div>
     <div class="trigger--temp">
-        <button type="button" class="trigger--temp__button">°C / °F</button>
+        <button type="button" class="trigger--temp__button">
+            <div class="active active-right"></div>
+            <p class="trigger" >°C</p><p class="trigger" >°F</p>
+        </button>
     </div>
 </nav>
 <main>
     <article class="weatherContainer--Today">
-
+        <div class="weatherContainer--Current__dayname"></div>
         <div class="weatherContainer--Current"></div>
         <div class="weatherContainer--Current__forecast">
             <div class="forecast__blur--left"></div>

@@ -13,6 +13,7 @@ nav{
     padding: 2.5rem 0;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .logo--container{
@@ -49,18 +50,37 @@ nav{
     cursor: pointer;
 }
 
-.searchbar--container_button:hover{
-    background-color: rgba(255, 255, 255, 0.89);
-    color:black;
-}
-
 .trigger--temp__button{
     background: rgba(255, 255, 255, 0.98);
-    padding: 5px;
     border:none;
+    padding: 0;
     width: 20rem;
     height: 4rem;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.active{
+    background: rgba(155, 155, 155, 0.98);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+@keyframes animationRight{
+    from{right:100px;}
+    to{right: 0;}
+}
+@keyframes animationLeft{
+    from{left:100px;}
+    to{left: 0;}
+}
+
+.trigger {
+    flex: 1 1 0;
 }
 
 .trigger--temp__button:hover{
@@ -218,6 +238,10 @@ nav{
     background-color:#F33535;
 }
 
-.weather--current_degree::after{
-    content:'°C';
+.weatherContainer--Current__dayname{
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    border-bottom: 1px solid black;
 }
