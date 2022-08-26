@@ -8,15 +8,18 @@ nav{
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     justify-items: center;
-    background-color: rgba(15, 33, 17, 0.52);
+    background-color: #29252C;
     grid-gap: 1.5rem;
-    padding: .5rem 0;
+    padding: 2.5rem 0;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .logo--container{
     font-size: 2rem;
+    color:white;
+    font-weight: bolder;
 }
 
 .searchbar--container{
@@ -28,8 +31,8 @@ nav{
 #searchbar{
     outline:none;
     border: none;
-    width: 30rem;
-    height: 2.5rem;
+    width: 50rem;
+    height: 4.5rem;
     padding: 1.5rem;
     border-radius: .5rem 0 0 .5rem;
 }
@@ -40,25 +43,44 @@ nav{
 
 .searchbar--container_button{
     border: 1px solid rgb(0,0,0,0.2);
-    background-color: #f6753f;
+    background-color: #F33535;
     color:white;
     border-radius: 0 5px 5px 0;
     padding: 5px;
     cursor: pointer;
 }
 
-.searchbar--container_button:hover{
-    background-color: rgba(255, 255, 255, 0.89);
-    color:black;
-}
-
 .trigger--temp__button{
     background: rgba(255, 255, 255, 0.98);
-    padding: 5px;
     border:none;
+    padding: 0;
     width: 20rem;
     height: 4rem;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.active{
+    background: rgba(155, 155, 155, 0.98);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+@keyframes animationRight{
+    from{right:100px;}
+    to{right: 0;}
+}
+@keyframes animationLeft{
+    from{left:100px;}
+    to{left: 0;}
+}
+
+.trigger {
+    flex: 1 1 0;
 }
 
 .trigger--temp__button:hover{
@@ -78,6 +100,7 @@ nav{
 
 .weatherContainer--Current__forecast {
     flex: 2 1 50%;
+    position: relative;
 }
 
 .weatherContainer--Current{
@@ -156,7 +179,7 @@ nav{
     margin: 0 20px;
 }
 
-.forecast__blur{
+.forecast__blur--right{
     width: 40px;
     height: 250px;
     position: absolute;
@@ -164,12 +187,21 @@ nav{
     background: -webkit-linear-gradient(0deg,rgb(255 255 255 / 0%),white);
 }
 
+.forecast__blur--left{
+    width: 40px;
+    height: 250px;
+    position: absolute;
+    margin-left: -10px;
+    left: 0;
+    background: -webkit-linear-gradient(0deg, white, rgb(255 255 255 / 0%));
+}
+
 .weatherContainer--Current__Extend{
     flex: 1 1 90%;
     display:flex;
     flex-flow:row;
     flex-wrap: wrap;
-    background-color: rgba(15, 33, 17, 0.52);
+    background-color: #29252C;
     padding: 0 200px;
 }
 
@@ -183,7 +215,7 @@ nav{
 .weather--ext_title{
     font-size: 12px;
     margin-bottom: 5px;
-    color: rgba(0, 0, 0, 0.46);
+    color: rgba(243, 53, 53, 0.74);
 ;
 }
 
@@ -191,4 +223,25 @@ nav{
     font-size: 20px;
     color: white;
     margin-top: 0;
+}
+
+.current--forecast__container::-webkit-scrollbar-track{
+    background: #ffffff;
+}
+
+.current--forecast__container::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.current--forecast__container::-webkit-scrollbar-thumb {
+    background-color:#F33535;
+}
+
+.weatherContainer--Current__dayname{
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    border-bottom: 1px solid black;
 }

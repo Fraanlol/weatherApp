@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pepe</title>
 </head>
 <body>
 <nav>
@@ -14,22 +14,29 @@
     </div>
     <div class="searchbar--container">
         <input type="search" id="searchbar" placeholder="Search Location...">
-        <button type="button" class="searchbar--container_button">Search</button>
+        <button type="submit" id="submitSearch" class="searchbar--container_button">Search</button>
     </div>
     <div class="trigger--temp">
-        <button type="button" class="trigger--temp__button">°C / °F</button>
+        <button type="button" class="trigger--temp__button">
+            <div class="active active-right"></div>
+            <p class="trigger" >°C</p><p class="trigger" >°F</p>
+        </button>
     </div>
 </nav>
 <main>
     <article class="weatherContainer--Today">
-
+        <div class="weatherContainer--Current__dayname"></div>
         <div class="weatherContainer--Current"></div>
         <div class="weatherContainer--Current__forecast">
+            <div class="forecast__blur--left"></div>
             <div class="current--forecast__container"></div>
-            <div class="forecast__blur"></div>
+            <div class="forecast__blur--right"></div>
         </div>
         <div class="weatherContainer--Current__Extend"></div>
     </article>
+    <div class="togglePage">
+
+    </div>
     <article class="weatherContainer--Forecast">
 
     </article>
