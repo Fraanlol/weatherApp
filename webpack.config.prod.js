@@ -49,14 +49,14 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'assets/[name].[contenthash].css',
         }),
-        new copyPlugin({
+        /*new copyPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, "src", "assets/images"),
                     to: "assets/images",
                 }
             ]
-        })
+        })*/
     ],
     optimization: {
         minimize: true,
