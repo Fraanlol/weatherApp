@@ -41,9 +41,9 @@ const buildCurr = () =>{
             extendedContainer.append(builder.weatherExtendedInfo(key));
         })
 
+
     });
 }
-
 
 buildCurr();
 
@@ -71,5 +71,37 @@ searchButton.addEventListener('click', () =>{
     buildCurr();
 })
 
+// Theme changer behaviour
 
+const themeChangerButton = document.querySelector('.themeChanger-button');
+themeChangerButton.addEventListener('click', changeTheme);
+
+
+function changeTheme(){
+
+    const rootElement = document.querySelector(':root');
+
+    const day = [
+        ['--details-color' ,  '#F33535'],
+        ['--background-color' ,  '#29252C'],
+        ['--text-color' ,  '#E7F6F2'],
+        ['--mainText-color' ,  '#E7F6F2'],
+        ['--extended-text' ,  'rgba(243, 53, 53, 0.69)'],
+        ['--border-color' ,  'black'],
+        ['--general-backg' ,  '#2C3333'],
+        ['--opt-border' , '#2C3333']
+    ]
+
+    const night = [
+        ['--details-color' ,  '#395B64'],
+        ['--background-color' ,  '#29252C'],
+        ['--text-color' ,  '#E7F6F2'],
+        ['--mainText-color' ,  '#E7F6F2'],
+        ['--extended-text' ,  '#7dd6d7'],
+        ['--border-color' ,  'black'],
+        ['--general-backg' ,  '#2C3333'],
+        ['--opt-border' , '#2C3333']
+    ]
+
+}
 
