@@ -75,23 +75,21 @@ searchButton.addEventListener('click', () =>{
 
 const themeChangerButton = document.querySelector('.themeChanger-button');
 themeChangerButton.addEventListener('click', changeTheme);
-
+let currentTheme = true;
 
 function changeTheme(){
 
     const rootElement = document.querySelector(':root');
-
     const day = [
         ['--details-color' ,  '#F33535'],
         ['--background-color' ,  '#29252C'],
         ['--text-color' ,  '#E7F6F2'],
-        ['--mainText-color' ,  '#E7F6F2'],
+        ['--mainText-color' ,  'black'],
         ['--extended-text' ,  'rgba(243, 53, 53, 0.69)'],
         ['--border-color' ,  'black'],
-        ['--general-backg' ,  '#2C3333'],
-        ['--opt-border' , '#2C3333']
+        ['--general-backg' ,  'white'],
+        ['--opt-border' , 'white']
     ]
-
     const night = [
         ['--details-color' ,  '#395B64'],
         ['--background-color' ,  '#29252C'],
@@ -102,6 +100,12 @@ function changeTheme(){
         ['--general-backg' ,  '#2C3333'],
         ['--opt-border' , '#2C3333']
     ]
-
+    let theme = currentTheme ? day:night;
+    theme.forEach((k) =>{
+        rootElement.style.setProperty(k[0],k[1]);
+    })
+    currentTheme = !currentTheme;
 }
+
+changeTheme();
 

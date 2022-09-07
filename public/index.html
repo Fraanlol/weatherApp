@@ -12,11 +12,27 @@
     <div class="logo--container">
         <p>WeatherApp</p>
     </div>
-    <div class="searchbar--container">
-        <input type="search" id="searchbar" placeholder="Search Location...">
-        <button type="submit" id="submitSearch" class="searchbar--container_button">Search</button>
+    <div>
+        <div class="searchbar--container">
+            <input type="search" id="searchbar" placeholder="Search Location...">
+            <button type="submit" id="submitSearch" class="searchbar--container_button">Search</button>
+        </div>
     </div>
-    <div class="trigger--temp">
+    <div class="trigger--temp hidden">
+        <button type="button" class="trigger--temp__button">
+            <div class="active active-right"></div>
+            <p class="trigger" >°C</p><p class="trigger" >°F</p>
+        </button>
+
+        <div class="themeChanger">
+            <div>
+                <div class="themeChanger-button">
+                    <img alt="theme changer button" src="./assets/images/theme.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trigger--temp bg-menu ">
         <button type="button" class="trigger--temp__button">
             <div class="active active-right"></div>
             <p class="trigger" >°C</p><p class="trigger" >°F</p>
